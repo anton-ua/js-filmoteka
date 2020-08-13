@@ -1,0 +1,54 @@
+<div class="container">
+    <section class="film-details">
+        <div class="film-details__image-container">
+            {{!-- TODO: дізнатися чи необхідний шаблонний рядок в src, чи скомпілюється і так --}}
+            <img class="image-container__image" src="https://image.tmdb.org/t/p/w400${{poster_path}}"
+                {{!-- TODO: дізнатися як реалізовується логічний оператор "або" в handlebars --}}
+                alt="Poster to film {{original_title || title|| name}}">
+        </div>
+        {{!-- TODO: дізнатися чи привилььно названі класи по БЕМу --}}
+        <div class="film-details__info">
+            <h2 class="info__title"> {{original_title || title|| name}}</h2>
+            <table class="info__table">
+                <tbody>
+                    <tr>
+                        <td>vote/votes</td>
+                        <td>{{}}</td>
+                    </tr>
+                    <tr>
+                        <td>popularity</td>
+                        <td>{{}}</td>
+                    </tr>
+                    <tr>
+                        <td>original title</td>
+                        <td>{{}}</td>
+                    </tr>
+                    <tr>
+                        <td>genre</td>
+                        <td>{{}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <h3 class="info-container__about">About</h3>
+            <p class="info-container__film-description">{{}}</p>
+            {{!-- TODO: визначитися щодо використання material-icons (https://materializecss.com/icons.html) --}}
+            {{!--TODO: Дізнатися як передати в handlebars-шаблон інформацію щодо стану поточного фільму (чи доданий він у watched, queue, чи ні) --}}
+            <div>
+                {{!-- <i class="material-icons">add</i> --}}
+                <span>Add to watched</span>
+                <span>Remove from watched</span>
+
+            </div>
+            <div>
+                {{!-- <i class="material-icons">add</i> --}}
+                <span>Add to queue</span>
+                <span>Remove from queue</span>
+            </div>
+
+
+        </div>
+    </section>
+
+
+</div>
