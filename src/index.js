@@ -1,4 +1,4 @@
 import './styles/normalize.scss';
 import './styles/styles.scss';
 
-import './components/filmDetails/filmDetails';
+import './components/filmLibraryPage/libraryPage';
