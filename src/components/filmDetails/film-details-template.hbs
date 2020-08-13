@@ -7,12 +7,12 @@
                 alt="Poster to film {{original_title || title|| name}}">
         </div>
         {{!-- TODO: дізнатися чи привилььно названі класи по БЕМу --}}
-        <div class="film-details__info">
-            <h2 class="info__title"> {{original_title || title|| name}}</h2>
-            <table class="info__table">
+        <div class="film-details__wrapper">
+            <h2 class="film-details__title"> {{original_title || title|| name}}</h2>
+            <table class="film-details__table">
                 <tbody>
-                    <tr>
-                        <td>vote/votes</td>
+                    <tr class="film-details__table--raw">
+                        <td class="film-details__table--cell">vote/votes</td>
                         <td>{{}}</td>
                     </tr>
                     <tr>
