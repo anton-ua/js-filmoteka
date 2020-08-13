@@ -1,0 +1,142 @@
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 66px;
+  background-color: #77c1bb;
+  font-size: 12px;
+  font-family: 'Myriad Pro', sans-serif;
+}
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 108px;
+  text-decoration: none;
+  cursor: pointer;
+  height: 20px;
+  margin: 10px;  
+}
+.logo-img {
+  max-width: 22px; 
+}
+
+.logo-name { 
+    display: none;   
+    visibility: visible;
+    opacity: 1;
+    font-size: 17px;
+    color: #372c48;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-left: 6px;
+    align-self: center;
+}
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0px;
+}
+.nav-list__item {
+  text-transform: uppercase;
+  width: 124px;
+  height: 30px;
+  font-weight: 300;
+  color: #372c48;
+  line-height: 2.4;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+.nav-list__item::after {
+  background-color: #372c48;  
+  display: block;
+  content: '';
+  height: 2px;
+  width: 0%;
+  left: 50%;  
+  position: absolute;
+  transition: width 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+.nav-list__item:hover:after,
+.nav-list__item:focus:after {
+  width: 120px;  
+}
+.home-hover:hover {
+  font-weight: 800;
+  transform: rotateZ(-20deg);
+}
+.library-hover:hover {
+  font-weight: 800;
+  transform: rotateZ(20deg);  
+}
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+}
+.logo-name:hover {
+  // transform: rotateZ(20deg);
+  // transform: rotateZ(-20deg);
+  animation: bounce 1s;
+}
+
+/* SearchBar----------- */
+.searchBar {
+  padding: 22px 0 22px;
+  margin: 0 auto 22px;
+  width: 100%;
+  background-color: #f3f6f6;
+  box-shadow: 0 5px 9px 1px rgba(0, 0, 0, 0.23);
+}
+.searchInput {
+  display: block;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  height: 24px;
+  width: 260px;
+  border: none;
+  border-bottom: 2px rgb(129, 126, 126) solid;
+
+  background-repeat: no-repeat;
+  outline: none;
+  padding: 0 26px 0;
+  margin: 0 auto;
+  background-color: #f3f6f6;
+}
+
+
+@media  (min-width: 639px) and (max-width: 968px) {
+  
+  .nav-list {
+    padding: 0 20px 0 0;
+  }
+  .logo-name {
+    display: inline-block;
+  }
+}
+@media  (min-width: 959px) {
+  .logo-name {
+    display: inline-block;
+  }
+  .nav-list {
+    padding: 0 20px 0 0;
+  }  
+}
