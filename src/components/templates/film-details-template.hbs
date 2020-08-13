@@ -1,31 +1,31 @@
 <div class="container">
     <section class="film-details">
-        <div class="film-details__image-container">
+        <div class="film-details__image-wraper">
             {{!-- TODO: дізнатися чи необхідний шаблонний рядок в src, чи скомпілюється і так --}}
-            <img class="image-container__image" src="https://image.tmdb.org/t/p/w400${{poster_path}}"
+            <img class="image-wraper__image" src="https://image.tmdb.org/t/p/w400${{poster_path}}"
                 {{!-- TODO: дізнатися як реалізовується логічний оператор "або" в handlebars --}}
                 alt="Poster to film {{original_title || title|| name}}">
         </div>
         {{!-- TODO: дізнатися чи привилььно названі класи по БЕМу --}}
-        <div class="film-details__info-container">
-            <h2 class="info-container__title"> {{original_title || title|| name}}</h2>
-            <table class="info-container__table">
+        <div class="film-details__info-wraper">
+            <h2 class="info-wraper__title"> {{original_title || title|| name}}</h2>
+            <table class="info-wraper__table">
                 <tbody>
-                    <tr>
-                        <td>vote/votes</td>
-                        <td>{{}}</td>
+                    <tr class="table__row">
+                        <td class="table__cell">vote/votes</td>
+                        <td class="table__cell">{{}}</td>
                     </tr>
-                    <tr>
-                        <td>popularity</td>
-                        <td>{{}}</td>
+                    <tr class="table__row">
+                        <td class="table__cell">popularity</td>
+                        <td class="table__cell">{{}}</td>
                     </tr>
-                    <tr>
-                        <td>original title</td>
-                        <td>{{}}</td>
+                    <tr class="table__row">
+                        <td class="table__cell">original title</td>
+                        <td class="table__cell">{{}}</td>
                     </tr>
-                    <tr>
-                        <td>genre</td>
-                        <td>{{}}</td>
+                    <tr class="table__row">
+                        <td class="table__cell">genre</td>
+                        <td class="table__cell">{{}}</td>
                     </tr>
 
                 </tbody>

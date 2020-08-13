@@ -1,0 +1,19 @@
+.container {
+  width: 1024px;
+}
+.film-details {
+  width: 100%;
+  display: flex;
+  // flex-wrap: wrap;
+
+  &__image {
+    width: 428px;
+    height: 630px;
+    background-color: palevioletred;
+    display: block;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+}
