@@ -1,5 +1,4 @@
-.container {
-  max-width: 1024px;
+.container {  
   margin: 0 auto;
 }
 .header {
@@ -7,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   height: 66px;
-  background-color: #77c1bb;
+  background-color: $primaryBackgroundColor;
   font-size: 12px;
   font-family: 'Myriad Pro', sans-serif;
 }
@@ -30,7 +29,7 @@
     visibility: visible;
     opacity: 1;
     font-size: 17px;
-    color: #372c48;
+    color: $primaryFontColor;
     line-height: 1.2;
     font-weight: 700;
     margin-left: 6px;
@@ -42,19 +41,23 @@
   list-style: none;
   padding: 0px;
 }
-.nav-list__item {
+.nav-list__item  {  
+    position: relative;
+}
+.header-btn {
   text-transform: uppercase;
   width: 124px;
   height: 30px;
   font-weight: 300;
-  color: #372c48;
+  color: $primaryFontColor;
   line-height: 2.4;
   text-align: center;
-  cursor: pointer;
-  position: relative;
+  border: none;
+  outline: none;
+  background-color: $primaryBackgroundColor;
 }
 .nav-list__item::after {
-  background-color: #372c48;  
+  background-color: $primaryFontColor;  
   display: block;
   content: '';
   height: 2px;
@@ -68,14 +71,12 @@
 .nav-list__item:focus:after {
   width: 120px;  
 }
-.home-hover:hover {
+  
+
+.header-btn:hover {
   font-weight: 800;
-  transform: rotateZ(-20deg);
 }
-.library-hover:hover {
-  font-weight: 800;
-  transform: rotateZ(20deg);  
-}
+
 @keyframes bounce {
 	0%, 20%, 60%, 100% {
 		transform: translateY(0);
@@ -93,9 +94,7 @@
 	}
 }
 .logo-name:hover {
-  // transform: rotateZ(20deg);
-  // transform: rotateZ(-20deg);
-  animation: bounce 1s;
+    animation: bounce 1s;
 }
 
 /* SearchBar----------- */
@@ -103,7 +102,7 @@
   padding: 22px 0 22px;
   margin: 0 auto 22px;
   width: 100%;
-  background-color: #f3f6f6;
+  background-color: $buttonBackgroundColor;
   box-shadow: 0 5px 9px 1px rgba(0, 0, 0, 0.23);
 }
 .searchInput {
@@ -114,15 +113,16 @@
   width: 260px;
   border: none;
   border-bottom: 2px rgb(129, 126, 126) solid;
-
   background-repeat: no-repeat;
   outline: none;
   padding: 0 26px 0;
   margin: 0 auto;
-  background-color: #f3f6f6;
+  background-color: $buttonBackgroundColor;
 }
-
-
+.place-finder {    
+    background: url(https://i.ibb.co/sqZzzRZ/icon.png) no-repeat 3px 1px;
+    background-size: auto 90%;
+}
 @media  (min-width: 639px) and (max-width: 968px) {
   
   .nav-list {
