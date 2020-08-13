@@ -1,0 +1,53 @@
+<div class="container">
+  <section class="film-details">
+    <div class="film-details__image--container">
+      <img class="film-details__image" src="https://i.ibb.co/bB8jnq7/Clip-Group.jpg" alt="Poster to film">
+    </div>
+    <div class="film-details__info">
+      <h2 class="info__title">Dumbo (2009)</h2>
+      <table class="info__table">
+        <tbody>
+          <tr class="info__table--raw">
+            <td class="info__table--cell">vote/votes</td>
+            <td class="info__table--cell">6.5/1422</td>
+          </tr>
+          <tr class="info__table--raw">
+            <td class="info__table--cell">popularity</td>
+            <td class="info__table--cell">100.2</td>
+          </tr>
+          <tr class="info__table--raw">
+            <td class="info__table--cell">original title</td>
+            <td class="info__table--cell">Dumbo</td>
+          </tr>
+          <tr class="info__table--raw">
+            <td class="info__table--cell">genre</td>
+            <td class="info__table--cell">drama, geografy. history</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <h3 class="info__title">About</h3>
+      <p class="info__film-description">A young elephant, whose oversized ears enable him to fly, helps save a
+        struggling circus, but when the circus plans a new venture, Dumbo and his friends discover dark secrets beneath
+        its shiny veneer.</p>
+      {{!--TODO: Дізнатися як передати в handlebars-шаблон інформацію щодо стану поточного фільму (чи доданий він у watched, queue, чи ні) --}}
+      <div class="button-wrap">
+        <button class="film-button add-to-watched"><i class="material-icons film-icon">videocam
+          </i>&nbsp;Add to watched
+        </button>
+        <button class="film-button add-to-queue"><i class="material-icons film-icon">event
+          </i>&nbsp;Add to queue
+        </button>
+      </div>
+      <div class="button-wrap">
+        <button class="film-button remove-from-watched"><i class="material-icons film-icon">videocam_off
+          </i>&nbsp;Remove from watched
+        </button>
+        <button class="film-button remove-from-queue"><i class="material-icons film-icon">event_busy
+          </i>&nbsp;<span class="film-button--text">Remove from queue</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+</div>
