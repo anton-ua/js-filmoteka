@@ -1,6 +1,9 @@
 import './styles/normalize.scss';
 import './styles/styles.scss';
 
-import { drawFilmDetailsMurkup } from './components/filmDetails/filmDetails';
+import './components/filmLibraryPage/libraryPage';
+import './components/header/header';
+import './components/footer/footer';
+import './components/filmDetails/filmDetails';
 
-drawFilmDetailsMurkup();
+import './main';
