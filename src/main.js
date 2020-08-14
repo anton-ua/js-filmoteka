@@ -1,39 +1,28 @@
 import { Router } from './components/router/router';
+import filmDetails from './components/filmDetails/filmDetails';
 
 window['router'] = new Router({
   root: '/',
   routes: [
     {
-      path: /feed\/(.*)/,
+      path: /film\/(.*)/,
       callback: id => {
-        console.log(id);
+        filmDetails(id);
       },
     },
     {
-      path: /about/,
-      callback: () => {},
+      path: '',
+      callback: () => {
+        console.log('work');
+      },
     },
   ],
 });
 
-console.log(window['router']);
+const film = document.querySelector('.film');
 
-// window['router'].navigate();
-
-console.log(document);
-
-const add = document.querySelector('.add');
-
-console.dir(add);
-
-// const home = document.querySelector('.');
-
-add.addEventListener('click', e => {
+film.addEventListener('click', e => {
   e.preventDefault();
-  window['router'].navigate('/about');
+  const { value } = e.target;
+  window['router'].navigate(`/film/${value}`);
 });
-
-// add.addEventListener('click', e => {
-//   e.preventDefault();
-//   window['router'].navigate('/');
-// });
