@@ -1,3 +1,4 @@
+
 import hbsTemplateHeader from './header.hbs';
 
 const markup = hbsTemplateHeader();

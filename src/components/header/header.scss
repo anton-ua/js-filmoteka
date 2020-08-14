@@ -1,4 +1,7 @@
-.container {  
+
+.container {
+  max-width: 1024px;
+
   margin: 0 auto;
 }
 .header {
@@ -18,6 +21,7 @@
   text-decoration: none;
   cursor: pointer;
   height: 20px;
+
   margin: 10px;  
 }
 .logo-img {
@@ -26,6 +30,7 @@
 
 .logo-name { 
     display: none;   
+
     visibility: visible;
     opacity: 1;
     font-size: 17px;
@@ -41,9 +46,11 @@
   list-style: none;
   padding: 0px;
 }
+
 .nav-list__item  {  
     position: relative;
 }
+
 .header-btn {
   text-transform: uppercase;
   width: 124px;
@@ -52,23 +59,26 @@
   color: $primaryFontColor;
   line-height: 2.4;
   text-align: center;
+
   border: none;
   outline: none;
   background-color: $primaryBackgroundColor;
 }
 .nav-list__item::after {
   background-color: $primaryFontColor;  
+
   display: block;
   content: '';
   height: 2px;
   width: 0%;
-  left: 50%;  
+  left: 50%; 
   position: absolute;
   transition: width 0.3s ease-in-out;
   transform: translateX(-50%);
 }
 .nav-list__item:hover:after,
 .nav-list__item:focus:after {
+
   width: 120px;  
 }
   
@@ -76,6 +86,7 @@
 .header-btn:hover {
   font-weight: 800;
 }
+
 
 @keyframes bounce {
 	0%, 20%, 60%, 100% {
@@ -94,7 +105,9 @@
 	}
 }
 .logo-name:hover {
+
     animation: bounce 1s;
+
 }
 
 /* SearchBar----------- */
@@ -102,7 +115,9 @@
   padding: 22px 0 22px;
   margin: 0 auto 22px;
   width: 100%;
+
   background-color: $buttonBackgroundColor;
+
   box-shadow: 0 5px 9px 1px rgba(0, 0, 0, 0.23);
 }
 .searchInput {
@@ -124,7 +139,7 @@
     background-size: auto 90%;
 }
 @media  (min-width: 639px) and (max-width: 968px) {
-  
+
   .nav-list {
     padding: 0 20px 0 0;
   }
@@ -138,5 +153,7 @@
   }
   .nav-list {
     padding: 0 20px 0 0;
+
   }  
+
 }
