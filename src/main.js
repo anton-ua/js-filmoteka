@@ -10,6 +10,12 @@ window['router'] = new Router({
         filmDetails(id);
       },
     },
+    {
+      path: '',
+      callback: () => {
+        console.log('work');
+      },
+    },
   ],
 });
 
