@@ -3,7 +3,7 @@ import axios from 'axios';
 //GET/trending/
 export const getMostPopularFilms = () => {
   return axios.get(
-    'https://api.themoviedb.org/3/trending/all/week?api_key=4c723f08ea7a4a76125776c3387f72cf',
+    'https://api.themoviedb.org/3/trending/movie/day?api_key=4c723f08ea7a4a76125776c3387f72cf',
   );
 };
 
