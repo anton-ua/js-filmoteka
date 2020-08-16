@@ -10,11 +10,7 @@ import './components/homePage/homePage';
 // import './components/filmDetails/filmDetails';
 
 import './main';
-// import createCardFunc from './components/filmLibraryPage/initialHomePage.js';
-// import {
-//   paginationEventListener,
-//   listener,
-// } from './components/filmLibraryPage/pagination.js';
-// createCardFunc();
-// paginationEventListener();
-// listener();
+
+import createCardFunc from './components/filmLibraryPage/initialHomePage.js';
+createCardFunc();
+

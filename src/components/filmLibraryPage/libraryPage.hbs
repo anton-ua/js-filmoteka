@@ -1,25 +1,12 @@
-
 <li class="film-card__item">
+    {{#if backdrop_path}}
     <img class="film-card__img" src="https://image.tmdb.org/t/p/w400{{backdrop_path}}"
         alt="poster for film {{film_title}}" />
-    {{!-- <span class="film-card__rating">{{vote_average}}</span> --}}
+    {{else}}
+    <img class="film-card__img"
+        src="https://www.klaviyo.com/wp-content/uploads/2016/09/abstract-background-1024x273.jpg"
+        alt="poster for film {{film_title}}" />
+    {{/if}}
+
     <h3 class="film-card__title"><a class="film-card__link" href="#">{{film_title}}</a></h3>
 </li>
-{{!-- <section class="homepage__pagination">
-    <button class="controller">Prev</button>
-    <button class="page_indicator">1</button>
-    <button class="controller">Next</button>
-
-<div class="container">
-    <div class="card-title">
-        <div class="card-title__item">
-            <h2>
-                Watched
-            </h2>
-            <h2>
-                Queue
-            </h2>
-        </div>
-    </div>
-
-</section> --}}
