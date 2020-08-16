@@ -1,6 +1,7 @@
 import Router from './components/router/router';
 import activeDetailsPage from './components/filmDetails/filmDetails';
-import renderMarkup from './components/homePage/homePage';
+// import renderMarkup from './components/homePage/homePage';
+import initialHomePage from './components/filmLibraryPage/initialHomePage';
 import libraryPath from './components/filmLibraryPage/libraryPage.hbs';
 
 const libraryBtn = document.querySelector('.header-btn[data-action=Library]');
@@ -27,7 +28,7 @@ window['router'] = new Router({
     {
       path: '',
       callback: () => {
-        renderMarkup();
+        initialHomePage();
       },
     },
   ],
