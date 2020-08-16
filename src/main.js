@@ -1,5 +1,8 @@
 import { Router } from './components/router/router';
-import filmDetails from './components/filmDetails/filmDetails';
+import activeDetailsPage from './components/filmDetails/filmDetails';
+
+// export const selectFilm = null;
+const isLibraryFilm = false;
 
 window['router'] = new Router({
   root: '/',
@@ -7,7 +10,7 @@ window['router'] = new Router({
     {
       path: /film\/(.*)/,
       callback: id => {
-        filmDetails(id);
+        activeDetailsPage(id, isLibraryFilm);
       },
     },
     {
