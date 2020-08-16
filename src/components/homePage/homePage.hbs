@@ -1,0 +1,13 @@
+<div class="container">
+  <ul class="card-film__list">
+    {{#each this}}
+    <li class="card-film">
+      <button class="card-film__item" value={{id}}>
+        <img class="card-flim__img" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="Poster to film">
+        <span class="card-flim__star">{{vote_average}}</span>
+        <h3 class="card-flim__title">{{title}} ({{year}})</h3>
+      </button>
+    </li>
+    {{/each}}
+  </ul>
+</div>
