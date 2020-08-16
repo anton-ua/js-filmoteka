@@ -1,0 +1,21 @@
+
+
+.homePageList {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;  
+  justify-content: space-around;   
+}
+.homePageListItem { 
+  height: 100%x;
+  width: 245px;  
+  list-style: none;
+  padding: 10px;
+   
+}
+.imgCard {
+  height: 100%;
+  width: 245px;
+  // object-fit: cover;
+  border-radius: 5%; 
+}
