@@ -1,9 +1,9 @@
-import hbsTemplate from './header.hbs';
 
-const markup = hbsTemplate();
+import hbsTemplateHeader from './header.hbs';
+
+
+const markup = hbsTemplateHeader();
 
 const header = document.querySelector('#header');
 
-header.insertAdjacentHTML('afterbegin', markup);
-
-
+header.insertAdjacentHTML('afterBegin', markup);
