@@ -1,28 +1,27 @@
-import {getFilmsByUsersQuery} from '../../services';
+import { getFilmsByUsersQuery } from '../../services';
 import template from './homePageList.hbs';
 
 const refs = {
-  filmList: document.querySelector(".homePageList"),
-  form: document.querySelector(".searchForm"),
-  input: document.querySelector('.searchInput')
+  filmList: document.querySelector('.film-card__list'),
+  form: document.querySelector('.searchForm'),
+  input: document.querySelector('.searchInput'),
 };
 
-
-const searchFilms = e => {  
+const searchFilms = async e => {
   e.preventDefault();
- let inputCurrentValue = (e.target.elements[0].value)
+  let inputCurrentValue = e.target.elements[0].value;
 
-  getFilmsByUsersQuery(inputCurrentValue, 1)
-    .then(data => {
-      const renderToHtml = data.data.results
-        .map(elem => {
-          return template(elem);
-        })
-        .join("");
-      refs.filmList.innerHTML = renderToHtml;
-
-    })
-    .catch(error => console.error(error));
+  const films = await getFilmsByUsersQuery(inputCurrentValue, 1);
+  
+    // .then(data => {
+    //   const renderToHtml = data.data.results
+    //     .map(elem => {
+    //       return template(elem);
+    //     })
+    //     .join('\n');
+    //   refs.filmList.innerHTML = renderToHtml;
+    // })
+    // .catch(error => console.error(error));
 };
 
-refs.form.addEventListener("submit", searchFilms);
+refs.form.addEventListener('submit', searchFilms);

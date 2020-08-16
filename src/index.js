@@ -10,10 +10,4 @@ import './components/footer/footer';
 
 import './main';
 import createCardFunc from './components/filmLibraryPage/initialHomePage.js';
-import {
-  paginationEventListener,
-  listener,
-} from './components/filmLibraryPage/pagination.js';
 createCardFunc();
-// paginationEventListener();
-// listener();
