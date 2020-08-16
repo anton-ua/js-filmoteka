@@ -1,0 +1,91 @@
+.container {
+  margin: 0 auto;
+  max-width: $containerWidth;
+}
+
+.film-details {
+  display: flex;
+
+  &__image {
+    max-width: 90%;
+    display: block;
+    margin: 30px auto 30px;
+    &--container {
+      width: 50%;
+    }
+  }
+
+  &__info {
+    width: 50%;
+  }
+}
+
+.info {
+  &__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: $primaryFontColor;
+    line-height: 1.2;
+    margin-top: 30px;
+    margin-bottom: 14px;
+  }
+
+  &__table {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    opacity: 0.541;
+    width: 95%;
+    border-collapse: collapse;
+
+    &--cell {
+      padding: 6px 0 6px 14px;
+    }
+
+    &--raw:nth-child(odd) {
+      background-color: $tableBackgroundColor;
+    }
+  }
+
+  &__film-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    opacity: 0.541;
+    width: 90%;
+    // margin: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.film-button {
+  text-align: center;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.button-wrap {
+  display: flex;
+}
+
+.film-button {
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: $primaryFontColor;
+}
+
+.film-button:focus,
+.film-button:hover {
+  outline: none;
+  color: $primaryBackgroundColor;
+}
+
+.film-icon-watched,
+.film-icon-queue {
+  font-size: inherit;
+  color: $primaryBackgroundColor;
+}
