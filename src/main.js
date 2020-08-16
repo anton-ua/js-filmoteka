@@ -1,12 +1,15 @@
-import { Router } from './components/router/router';
+import Router from './components/router/router';
 import activeDetailsPage from './components/filmDetails/filmDetails';
 import renderMarkup from './components/homePage/homePage';
+import libraryPath from './components/filmLibraryPage/libraryPage.hbs';
 
-// export const selectFilm = null;
-const isLibraryFilm = false;
+const libraryBtn = document.querySelector('.header-btn[data-action=Library]');
+const homeBtn = document.querySelector('.header-btn[data-action=home]');
 
-window['router'] = new Router({
+const router = new Router({
+  mode: 'history',
   root: '/',
+  
   routes: [
     {
       path: /film\/(.*)/,
@@ -21,12 +24,19 @@ window['router'] = new Router({
       },
     },
   ],
+
+router.add(/library/, () => {
+  alert('works!');
 });
 
-const film = document.querySelector('.film');
-
-film.addEventListener('click', e => {
+libraryBtn.addEventListener('click', e => {
   e.preventDefault();
-  const { value } = e.target;
-  window['router'].navigate(`/film/${value}`);
+  console.log('routing to library works!');
+  router.navigate(/library/);
+});
+
+homeBtn.addEventListener('click', e => {
+  e.preventDefault();
+  console.log('routing to home works!');
+  router.navigate('/');
 });
