@@ -6,11 +6,18 @@ import libraryPath from './components/filmLibraryPage/libraryPage.hbs';
 const libraryBtn = document.querySelector('.header-btn[data-action=Library]');
 const homeBtn = document.querySelector('.header-btn[data-action=home]');
 
-const router = new Router({
-  mode: 'history',
+const isLibraryFilm = false;
+
+window['router'] = new Router({
   root: '/',
-  
+
   routes: [
+    {
+      path: /library/,
+      callback: id => {
+        console.log('Library page');
+      },
+    },
     {
       path: /film\/(.*)/,
       callback: id => {
@@ -24,19 +31,16 @@ const router = new Router({
       },
     },
   ],
-
-router.add(/library/, () => {
-  alert('works!');
 });
 
 libraryBtn.addEventListener('click', e => {
   e.preventDefault();
   console.log('routing to library works!');
-  router.navigate(/library/);
+  window['router'].navigate('/library');
 });
 
 homeBtn.addEventListener('click', e => {
   e.preventDefault();
   console.log('routing to home works!');
-  router.navigate('/');
+  window['router'].navigate('/');
 });
