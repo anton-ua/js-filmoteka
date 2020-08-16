@@ -1,5 +1,6 @@
 import { Router } from './components/router/router';
 import activeDetailsPage from './components/filmDetails/filmDetails';
+import renderMarkup from './components/homePage/homePage';
 
 // export const selectFilm = null;
 const isLibraryFilm = false;
@@ -16,7 +17,7 @@ window['router'] = new Router({
     {
       path: '',
       callback: () => {
-        console.log('work');
+        renderMarkup();
       },
     },
   ],
