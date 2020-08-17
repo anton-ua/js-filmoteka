@@ -1,5 +1,6 @@
 import hbsTemplate from './filmDetails.hbs';
 import * as api from '../api/fetchApi';
+import * as localStorage from '../services/localStorage';
 
 const refs = {
   filmDetails: document.querySelector('#main'),
@@ -11,28 +12,17 @@ const refs = {
 
 let selectFilm = {};
 
-const getFromLocalStorage = key => {
-  if (!localStorage[key]) {
-    return false;
-  }
-  return JSON.parse(localStorage.getItem(key));
-};
-
-const setToLocalStorage = (key, object) => {
-  localStorage.setItem(key, JSON.stringify(object));
-};
-
 const pushItemToLocalStorage = key => {
-  const list = getFromLocalStorage(key) || [];
+  const list = localStorage.get(key) || [];
   list.push(selectFilm);
-  setToLocalStorage(key, list);
+  localStorage.set(key, list);
 };
 
 const removeItemFromLocalStorage = key => {
-  const list = getFromLocalStorage(key);
+  const list = localStorage.get(key);
   const newList = list.filter(({ id }) => selectFilm.id !== id);
 
-  setToLocalStorage(key, newList);
+  localStorage.set(key, newList);
 };
 
 const findById = (list, filmId) => {
@@ -47,7 +37,7 @@ const monitorButtonStatusText = id => {
   refs.watchedIcon = document.querySelector('.film-icon-watched');
   refs.watchedButton = document.querySelector('.watched-button');
 
-  const watchedList = getFromLocalStorage('filmsWatched');
+  const watchedList = localStorage.get('filmsWatched');
   const watched = findById(watchedList, id);
 
   if (watched) {
@@ -76,10 +66,8 @@ const monitorButtonStatusText = id => {
   refs.queueIcon = document.querySelector('.film-icon-queue');
   refs.queueButton = document.querySelector('.queue-button');
 
-  const queueList = getFromLocalStorage('filmsQueue');
+  const queueList = localStorage.get('filmsQueue');
   const queue = findById(queueList, id);
-
-  console.log(queue);
 
   if (queue) {
     refs.queue.innerHTML = 'Remove from queue';
@@ -107,9 +95,6 @@ const monitorButtonStatusText = id => {
 const activeDetailsPage = async (id, isLibraryFilm) => {
   if (!isLibraryFilm) {
     selectFilm = await getFilmDetails(id);
-  } else {
-    const list = getFromLocalStorage('filmsWatched');
-    selectFilm = findById(list, id);
   }
 
   showDetails(selectFilm);
@@ -131,6 +116,9 @@ const getFilmDetails = async filmId => {
 
     const year = film.data.release_date.split('-').slice(0, 1).toString();
     const genres = film.data.genres.map(({ name }) => name).join(', ');
+    const backdrop_path = film.data.backdrop_path
+      ? film.data.backdrop_path
+      : film.data.poster_path;
 
     const {
       poster_path,
@@ -153,6 +141,7 @@ const getFilmDetails = async filmId => {
       overview,
       genres,
       year,
+      backdrop_path,
       id,
     };
   } catch (err) {
