@@ -1,0 +1,44 @@
+/* SearchBar----------- */
+.searchBar {
+  padding: 22px 0 22px;
+  margin: 0 auto 22px;
+  width: 100%;
+
+  background-color: $buttonBackgroundColor;
+
+  box-shadow: 0 5px 9px 1px rgba(0, 0, 0, 0.23);
+}
+.searchInput {
+  display: block;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  height: 24px;
+  width: 260px;
+  border: none;
+  border-bottom: 2px rgb(129, 126, 126) solid;
+  background-repeat: no-repeat;
+  outline: none;
+  padding: 0 26px 0;
+  margin: 0 auto;
+  background-color: $buttonBackgroundColor;
+}
+.place-finder {
+  background: url(https://i.ibb.co/sqZzzRZ/icon.png) no-repeat 3px 1px;
+  background-size: auto 90%;
+}
+@media (min-width: 639px) and (max-width: 968px) {
+  .nav-list {
+    padding: 0 20px 0 0;
+  }
+  .logo-name {
+    display: inline-block;
+  }
+}
+@media (min-width: 959px) {
+  .logo-name {
+    display: inline-block;
+  }
+  .nav-list {
+    padding: 0 20px 0 0;
+  }
+}

@@ -4,7 +4,7 @@ import {
   getMostPopularFilms,
   getFilmsByUsersQuery,
 } from '../../api/fetchApi';
-import libraryPage from './libraryPage.hbs';
+import libraryPage from './homePage.hbs';
 
 const main = document.querySelector('#main');
 let maxPageCounter;
@@ -35,12 +35,7 @@ const createCardFunc = async (query = null) => {
     const films = await getFilmsByUsersQuery(query, pageNumber);
     renderFilms = [...films.data.results];
     // genres = await getFilmGenres();
-    main.innerHTML = `<ul class ="film-card__list">${filmsItemsMarkup()}</ul>
-    <section class="homepage__pagination">
-    <button id="prev" class="homepage__pagination-controller">Prev</button>
-    <button class="homepage__pagination-page_indicator">${pageNumber}</button>
-    <button id="next" class="homepage__pagination-controller">Next</button>
-    </section>`;
+    insertToDom();
     paginationEventListener();
   };
   refs.form.addEventListener('submit', searchFilmsHandler);
@@ -78,7 +73,7 @@ const createCardFunc = async (query = null) => {
 
     if (pageNumber > 1) newArr = renderFilms.slice(startIdx(), endIdx());
 
-    console.log(newArr);
+    // console.log(newArr);
 
     return newArr
       .map(
@@ -177,9 +172,9 @@ const addEventLinstenerForFilm = () => {
   document.querySelectorAll('.film-card__item').forEach(card =>
     card.addEventListener('click', e => {
       e.preventDefault();
-      console.log(e.currentTarget);
-      const { value } = e.currentTarget;
-      window['router'].navigate(`/film/${value}`);
+      console.dir(e.currentTarget);
+      const { name } = e.currentTarget;
+      window['router'].navigate(`/film/${name}`);
     }),
   );
 };

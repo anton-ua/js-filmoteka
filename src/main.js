@@ -2,7 +2,8 @@ import Router from './components/router/router';
 import activeDetailsPage from './components/filmDetails/filmDetails';
 // import renderMarkup from './components/homePage/homePage';
 import initialHomePage from './components/filmLibraryPage/initialHomePage';
-import libraryPath from './components/filmLibraryPage/libraryPage.hbs';
+// import libraryPath from './components/filmLibraryPage/libraryPage.hbs';
+import libraryPage from './components/filmLibraryPage/libraryPage';
 
 const libraryBtn = document.querySelector('.header-btn[data-action=Library]');
 const homeBtn = document.querySelector('.header-btn[data-action=home]');
@@ -14,9 +15,15 @@ window['router'] = new Router({
 
   routes: [
     {
-      path: /library/,
-      callback: id => {
-        console.log('Library page');
+      path: /library\/watched/,
+      callback: () => {
+        libraryPage('filmsWatched');
+      },
+    },
+    {
+      path: /library\/queue/,
+      callback: () => {
+        libraryPage('filmsQueue');
       },
     },
     {
@@ -36,12 +43,10 @@ window['router'] = new Router({
 
 libraryBtn.addEventListener('click', e => {
   e.preventDefault();
-  console.log('routing to library works!');
-  window['router'].navigate('/library');
+  window['router'].navigate('/library/watched');
 });
 
 homeBtn.addEventListener('click', e => {
   e.preventDefault();
-  console.log('routing to home works!');
   window['router'].navigate('/');
 });
